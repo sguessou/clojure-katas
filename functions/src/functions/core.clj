@@ -7,7 +7,7 @@
    (not (equal n 1)))
 
 ;; Clojure conversion
-(defn not-onep
+(defn not-one?
   [n]
   (not (= n 1)))
 
@@ -18,14 +18,17 @@
   (not (> n 0)))
 
 ;; Clojure conversion
-(defn not-plusp
+(defn not-plus?
   [n]
   (not (> n 0)))
 
-;;;; Ex 1.17
+;;;; Ex 3
 ;;; Some earlier Lisp dialects did not have the EVENP primitive; they only had ODDP. Show how to define EVENP in terms of ODDP.
 (defun my-evenp (n)
   (not (oddp n)))
+
+;; Clojure conversion. 
+(def my-evenp #(even? %)) 
 
 ;;;; Ex 1.20
 ;;; Write XOR, the exclusive-or truth function.
