@@ -14,24 +14,50 @@
   [my-list]
   (first (rest (rest my-list))))
 
-;; Ex 2.9
+;; Ex 2
 ; Show how to write MY-THIRD using SECOND.
 (defun my-third-b (a-list)
   (second (rest a-list)))
 
-;; Ex 2.13
+;; Clojure conversion
+(defn my-third-b
+  [my-list]
+  (second (rest my-list)))
+
+;; Ex 2
 ; Write the functions to get each word in the list: (((FUN)) (IN THE) (SUN))
 (defun get-first (my-list)
   (caaar my-list))
 
+;; Clojure conversion
+(defn get-first [my-list]
+  (first (flatten (first my-list))))
+
+
+(get-first '(((FUN)) (IN THE) (SUN)))
+
+
 (defun get-second-first (my-list)
   (caadr my-list))
+
+;; Clojure conversion
+(defn get-second [my-list]
+  (first (flatten (second my-list))))
+
+(get-second '(((FUN)) (IN THE) (SUN)))
+
 
 (defun get-second-second (my-list)
   (cadadr my-list))
 
 (defun get-third (my-list)
   (caaddr my-list))
+
+;; Clojure conversion
+(defn get-third [my-list]
+  (first (flatten (nth my-list 2))))
+
+(get-third '(((FUN)) (IN THE) (SUN)))
 
 ;; Ex 2.18
 ; Write a function that takes any two inputs and make a list of them using CONS
