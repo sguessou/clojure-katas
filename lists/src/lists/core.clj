@@ -59,10 +59,16 @@
 
 (get-third '(((FUN)) (IN THE) (SUN)))
 
-;; Ex 2.18
+;; Ex 3
 ; Write a function that takes any two inputs and make a list of them using CONS
 (defun generate-list (a b)
   (cons a (cons b nil)))
+
+;; Clojure conversion
+(defn generate-list [a b]
+  (cons a (cons b nil)))
+
+(generate-list :hello :world)
 
 ;; Ex 2.21
 ; Write a function that takes four inputs and returns a two-element nested list. 
