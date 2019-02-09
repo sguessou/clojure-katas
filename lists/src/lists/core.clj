@@ -70,12 +70,17 @@
 
 (generate-list :hello :world)
 
-;; Ex 2.21
+;; Ex 4
 ; Write a function that takes four inputs and returns a two-element nested list. 
 ; The first element should be a list of the two inputs, and the second element a list of the last two inputs.
 (defun my-four-list (a b c d)
   (list (list a b) (list c d)))
 
+;; clojure conversion
+(defn my-four-list [a b c d]
+  (list (list a b) (list c d)))
+
+(my-four-list :a :v :d :e)
 ;; Ex 2.22
 ; Suppose we wanted to make a function called DUO-CONS that added two elements to the front of a list. Remember that the regular CONS function adds only one element to a list.
 ; DUO-CONS would be a function of three inputs. For example, if the inputs were the symbol PATRICK, the symbol SEYMOUR, and the list (MARVIN), DUO-CONS would return the list (PATRICK SEYMOUR MARVIN).
