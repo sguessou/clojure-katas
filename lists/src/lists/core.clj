@@ -81,6 +81,15 @@
   (list (list a b) (list c d)))
 
 (my-four-list :a :v :d :e)
+
+;; Ex 5
+;; Try implementing map using reduce.
+(defn my-map [my-list f]
+  (reverse (reduce (fn [n val] (cons (f val) n))
+           '()
+           my-list)))
+
+(my-map '(1 3 4) inc)
 ;; Ex 2.22
 ; Suppose we wanted to make a function called DUO-CONS that added two elements to the front of a list. Remember that the regular CONS function adds only one element to a list.
 ; DUO-CONS would be a function of three inputs. For example, if the inputs were the symbol PATRICK, the symbol SEYMOUR, and the list (MARVIN), DUO-CONS would return the list (PATRICK SEYMOUR MARVIN).
